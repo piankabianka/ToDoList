@@ -49,6 +49,11 @@ document.addEventListener('DOMContentLoaded', function(){
     list.addEventListener('click', function(e){
         if(e.target.className=='delete-button'){
             const li=e.target.parentElement;
+            
+            const deleteBall1=document.querySelector('.delete-ball1');
+            deleteBall1.classList.add('delete-ball-active'); 
+
+
             list.removeChild(li);
         }
 
@@ -56,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function(){
         if(e.target.className=='move-button'){
             const li=e.target.parentElement;
             
-            //listInProgress.appendChild(li);
             taskInProgress.push(li);
 
             const ball = document.querySelector('.move-ball');
@@ -70,6 +74,10 @@ document.addEventListener('DOMContentLoaded', function(){
     listInProgress.addEventListener('click', function(e){
         if(e.target.className=='delete-button'){
             const li=e.target.parentElement;
+
+            const deleteBall2=document.querySelector('.delete-ball2');
+            deleteBall2.classList.add('delete-ball-active'); 
+
             listInProgress.removeChild(li);
         }
 
@@ -77,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function(){
             const li=e.target.parentElement;
             
             taskDone.push(li);
-            //listDone.appendChild(li);
             const ball = document.querySelector('.move-ball2');
             ball.classList.add('move-ball-active');
             listInProgress.removeChild(li);
@@ -88,6 +95,9 @@ document.addEventListener('DOMContentLoaded', function(){
     listDone.addEventListener('click', function(e){
         if(e.target.className=='delete-button'){
             const li=e.target.parentElement;
+
+            const deleteBall3=document.querySelector('.delete-ball3');
+            deleteBall3.classList.add('delete-ball-active'); 
             listDone.removeChild(li);
         }
 
@@ -122,6 +132,20 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     })
 
+    const deleteBall1=document.querySelector('.delete-ball1');
+    deleteBall1.addEventListener('animationend', (e)=>{
+        e.target.classList.remove('delete-ball-active');
+    })
+
+    const deleteBall2=document.querySelector('.delete-ball2');
+    deleteBall2.addEventListener('animationend', (e)=>{
+        e.target.classList.remove('delete-ball-active');
+    })
+
+    const deleteBall3=document.querySelector('.delete-ball3');
+    deleteBall3.addEventListener('animationend', (e)=>{
+        e.target.classList.remove('delete-ball-active');
+    })
     
 
 })
