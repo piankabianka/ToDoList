@@ -4,7 +4,7 @@ body{
    
 }
 #wrapper{
-    width:1000px;
+    max-width:1000px;
     height:1000px;
     margin: 0px auto;
     background-color: rgb(245, 245, 245);
@@ -79,22 +79,43 @@ body{
 }
 
 /*------------LISTY------------*/
-
-.lists:after{
-    content:"";
-    display:block;
-    clear:both;
+.lists-container{
+    min-height: max-content;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
+
 .list{
-    float:left;
-    width:21.33%;
-    margin:5%;
-    padding:1%;
-    height:auto;
+    flex: 0 1 28%;
+    margin-top: 20px;
+    height:max-content;
     position:relative;
     border-radius: 5px;
-    position:relative;
+    
+}
+
+#to-do-list{
+    background-color: rgb(217, 217, 243);
+    margin-left:40px;
+}
+
+#in-progress-list{
+    background-color:rgb(229, 229, 248) ;
+    top:30px;
+    
+}
+
+#done-list{
+    background-color: rgb(236, 236, 240);
+    margin-right:40px;
+}
+
+@media screen and(min-width: 900px){
+    
+    
+
 }
 
 
@@ -175,21 +196,7 @@ body{
 }
 
 
-#to-do-list{
-    background-color: rgb(217, 217, 243);
-    
-}
 
-#in-progress-list{
-    background-color:rgb(229, 229, 248) ;
-    top:20px;
-    
-}
-
-#done-list{
-    background-color: rgb(236, 236, 240);
-   
-}
 
 /*------------ANIMACJE------------*/
 
